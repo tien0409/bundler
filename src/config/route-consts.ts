@@ -1,6 +1,6 @@
 import { join } from "path";
 
-export const ROOT_ROUTE: string = process.env.PUBLIC_URL;
+export const ROOT_ROUTE: string = process.env.VITE_PUBLIC_URL;
 export const LOGIN_ROUTE: string = ROOT_ROUTE
   ? ROOT_ROUTE + "/login"
   : "/login";

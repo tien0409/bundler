@@ -1,12 +1,12 @@
 import moment from "moment";
 // import path from "path";
 
-export const PUBLIC_URL: string = process.env.PUBLIC_URL;
-export const ASSETS_IMAGE: string = PUBLIC_URL
-  ? PUBLIC_URL + "/assets/img"
+export const VITE_PUBLIC_URL: string = process.env.VITE_PUBLIC_URL;
+export const ASSETS_IMAGE: string = VITE_PUBLIC_URL
+  ? VITE_PUBLIC_URL + "/assets/img"
   : "/assets/img";
-export const ASSETS_SVG: string = PUBLIC_URL
-  ? PUBLIC_URL + "/assets/svg"
+export const ASSETS_SVG: string = VITE_PUBLIC_URL
+  ? VITE_PUBLIC_URL + "/assets/svg"
   : "/assets/svg";
 export const BASE_API_URL: string =
   process.env.REACT_APP_BASE_API_URL ?? window.location.origin;

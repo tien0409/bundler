@@ -15,7 +15,7 @@ export const PrivateRoute = ({ ...rest }) => (
         return (
           <Redirect
             to={{
-              pathname: `${process.env.PUBLIC_URL}/login`,
+              pathname: `${process.env.VITE_PUBLIC_URL}/login`,
               state: { from: props.location },
             }}
           />
@@ -28,9 +28,11 @@ export const PrivateRoute = ({ ...rest }) => (
             <Switch>
               <Route
                 exact
-                path={`${process.env.PUBLIC_URL}/`}
+                path={`${process.env.VITE_PUBLIC_URL}/`}
                 render={() => {
-                  return <Redirect to={`${process.env.PUBLIC_URL}/product`} />;
+                  return (
+                    <Redirect to={`${process.env.VITE_PUBLIC_URL}/product`} />
+                  );
                 }}
               />
               {userRoutes.map(({ path, component: Component }) => (

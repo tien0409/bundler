@@ -21,7 +21,7 @@ const app = (
       <Switch>
         <Route
           exact
-          path={`${process.env.PUBLIC_URL}/login`}
+          path={`${process.env.VITE_PUBLIC_URL}/login`}
           component={Login}
         />
         <PrivateRoute path="/" />
