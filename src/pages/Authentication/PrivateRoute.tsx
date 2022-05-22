@@ -15,7 +15,7 @@ export const PrivateRoute = ({ ...rest }) => (
         return (
           <Redirect
             to={{
-              pathname: `${process.env.PUBLIC_URL}/login`,
+              pathname: `${import.meta.env.PUBLIC_URL}/login`,
               state: { from: props.location },
             }}
           />
@@ -28,9 +28,11 @@ export const PrivateRoute = ({ ...rest }) => (
             <Switch>
               <Route
                 exact
-                path={`${process.env.PUBLIC_URL}/`}
+                path={`${import.meta.env.PUBLIC_URL}/`}
                 render={() => {
-                  return <Redirect to={`${process.env.PUBLIC_URL}/product`} />;
+                  return (
+                    <Redirect to={`${import.meta.env.PUBLIC_URL}/product`} />
+                  );
                 }}
               />
               {userRoutes.map(({ path, component: Component }) => (

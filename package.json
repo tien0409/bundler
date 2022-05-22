@@ -70,6 +70,12 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.17.12",
+    "@babel/preset-typescript": "^7.17.12",
+    "@snowpack/plugin-babel": "^2.1.7",
+    "@snowpack/plugin-dotenv": "^2.2.0",
+    "@snowpack/plugin-react-refresh": "^2.5.0",
+    "@snowpack/plugin-sass": "^1.4.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -95,13 +101,14 @@
     "react-app-rewire-postcss": "^3.0.2",
     "react-app-rewired": "^2.1.8",
     "react3l-cli": "^1.1.0",
+    "snowpack": "^3.8.3",
     "ts-nameof.macro": "^4.2.1"
   },
   "scripts": {
     "prestart": "run-s merge",
-    "start": "react-app-rewired start",
+    "start": "snowpack dev",
     "prebuild": "run-s merge",
-    "build": "react-app-rewired build",
+    "build": "snowpack build",
     "merge": "react3l translate merge -i src/ -o src/locales/ -p src/i18n/",
     "extract": "react3l translate extract -i src/ -o src/i18n/ -p src/i18n/",
     "test": "react-app-rewired test",

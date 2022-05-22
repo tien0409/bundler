@@ -23,12 +23,12 @@ const ProfileMenu = (props: any) => {
 
   useEffect(() => {
     if (localStorage.getItem("authUser")) {
-      if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
+      if (import.meta.env.REACT_APP_DEFAULTAUTH === "firebase") {
         const obj = JSON.parse(localStorage.getItem("authUser") as string);
         setusername(obj.displayName);
       } else if (
-        process.env.REACT_APP_DEFAULTAUTH === "fake" ||
-        process.env.REACT_APP_DEFAULTAUTH === "jwt"
+        import.meta.env.REACT_APP_DEFAULTAUTH === "fake" ||
+        import.meta.env.REACT_APP_DEFAULTAUTH === "jwt"
       ) {
         const obj = JSON.parse(localStorage.getItem("authUser") as string);
         setusername(obj.username);

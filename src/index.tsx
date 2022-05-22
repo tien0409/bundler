@@ -21,7 +21,7 @@ const app = (
       <Switch>
         <Route
           exact
-          path={`${process.env.PUBLIC_URL}/login`}
+          path={`${import.meta.env.PUBLIC_URL}/login`}
           component={Login}
         />
         <PrivateRoute path="/" />
@@ -32,3 +32,7 @@ const app = (
 
 ReactDOM.render(app, document.getElementById("root"));
 serviceWorker.unregister();
+
+if (import.meta.hot) {
+  import.meta.hot.accept();
+}

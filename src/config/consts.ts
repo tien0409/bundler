@@ -1,7 +1,7 @@
 import moment from "moment";
 // import path from "path";
 
-export const PUBLIC_URL: string = process.env.PUBLIC_URL;
+export const PUBLIC_URL: string = import.meta.env.PUBLIC_URL;
 export const ASSETS_IMAGE: string = PUBLIC_URL
   ? PUBLIC_URL + "/assets/img"
   : "/assets/img";
@@ -9,7 +9,7 @@ export const ASSETS_SVG: string = PUBLIC_URL
   ? PUBLIC_URL + "/assets/svg"
   : "/assets/svg";
 export const BASE_API_URL: string =
-  process.env.REACT_APP_BASE_API_URL ?? window.location.origin;
+  import.meta.env.REACT_APP_BASE_API_URL ?? window.location.origin;
 
 /**
  * Date-time constants
